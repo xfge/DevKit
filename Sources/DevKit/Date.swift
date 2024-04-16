@@ -113,6 +113,10 @@ public extension Date {
     var md: String {
         DateFormatter.md.string(from: self)
     }
+    
+    var relativeDateOnly: String {
+        DateFormatter.relativeDateOnly.string(from: self)
+    }
 
     // 今日, 3月1日 周三, 2021年3月1日 周四
     func flexibleDate(weekday: Bool = false, year: Bool = true, showTimeForRelativeDate: Bool = false) -> String {
