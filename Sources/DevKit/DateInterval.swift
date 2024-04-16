@@ -17,7 +17,7 @@ public extension DateInterval {
     }
 }
 
-extension DateInterval {
+public extension DateInterval {
     // 3月2日 11:20 至 17:30
     // 3月2日 11:20 至 3月3日 9:00
     var compactDateTime: String {

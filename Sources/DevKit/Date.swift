@@ -34,7 +34,7 @@ public extension Date {
     var isDistantFuture:    Bool { self == .distantFuture }
 }
 
-extension Date {
+public extension Date {
     static let secondsOfAnHour: TimeInterval = 3600
     static let secondsOfADay: TimeInterval = 86400
 
