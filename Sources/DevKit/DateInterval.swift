@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension DateInterval {
+public extension DateInterval {
     init(safeStart start: Date, end: Date) {
         if end < start {
             self.init(start: start, end: start)
