@@ -207,9 +207,14 @@ public extension Date {
         }
     }
 
-    // 1月 2月
+    // Jan Feb
     var month: String {
         DateFormatter.month.string(from: self)
+    }
+    
+    // January February
+    var fullMonth: String {
+        DateFormatter.fullMonth.string(from: self)
     }
 
     // 3月2日

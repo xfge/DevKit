@@ -92,6 +92,12 @@ public extension DateFormatter {
         formatter.setLocalizedDateFormatFromTemplate("MMM")
         return formatter
     }()
+    
+    static var fullMonth: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.setLocalizedDateFormatFromTemplate("MMMM")
+        return formatter
+    }()
 
     static var relative: DateFormatter = {
         let formatter = DateFormatter()
