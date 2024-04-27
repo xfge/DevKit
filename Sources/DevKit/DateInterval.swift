@@ -65,6 +65,11 @@ public extension DateInterval {
     var fullDate: String {
         DateIntervalFormatter.fullDate.string(from: start, to: end)
     }
+    
+    // 3月2日 周一 至 3月7日 周六
+    var mde: String {
+        DateIntervalFormatter.mde.string(from: start, to: end)
+    }
 
     // 2023年6月（用于旅程概要）
     var yearMonth: String {

@@ -38,6 +38,12 @@ public extension DateIntervalFormatter {
         formatter.dateTemplate = "yyyyMMMd"
         return formatter
     }()
+    
+    static var mde: DateIntervalFormatter = {
+        let formatter = DateIntervalFormatter()
+        formatter.dateTemplate = "MMMdE"
+        return formatter
+    }()
 
     static var compactDateTime: DateIntervalFormatter = {
         let formatter = DateIntervalFormatter()
