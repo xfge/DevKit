@@ -11,6 +11,11 @@ import SwiftUI
 public struct SettingRowLabel: View {
     var label: String
     var symbol: SFSymbol
+    
+    public init(label: String, symbol: SFSymbol) {
+        self.label = label
+        self.symbol = symbol
+    }
 
     public var body: some View {
         Label(

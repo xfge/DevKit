@@ -15,6 +15,13 @@ public struct ColorfulSettingRowView: View {
     var trailingSymbol: SFSymbol?
 
     @ScaledMetric var size = 28.0
+    
+    public init(label: String, symbol: SFSymbol, color: Color, trailingSymbol: SFSymbol? = nil) {
+        self.label = label
+        self.symbol = symbol
+        self.color = color
+        self.trailingSymbol = trailingSymbol
+    }
 
     public var body: some View {
         HStack {
