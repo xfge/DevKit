@@ -5,17 +5,18 @@
 //  Created by Xiaofei Ge on 2024/6/20.
 //
 
+import SFSafeSymbols
 import SwiftUI
 
-struct SettingRowLabel: View {
+public struct SettingRowLabel: View {
     var label: String
-    var symbol: String
+    var symbol: SFSymbol
 
-    var body: some View {
+    public var body: some View {
         Label(
             title: { Text(label) },
             icon: {
-                Image(systemName: symbol)
+                Image(systemSymbol: symbol)
                     .font(.labelFont)
             }
         )
@@ -23,5 +24,5 @@ struct SettingRowLabel: View {
 }
 
 #Preview {
-    SettingRowLabel(label: "Tags", symbol: "tag")
+    SettingRowLabel(label: "Tags", symbol: .tag)
 }

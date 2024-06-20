@@ -5,23 +5,24 @@
 //  Created by Xiaofei Ge on 2024/6/20.
 //
 
+import SFSafeSymbols
 import SwiftUI
 
-struct ColorfulSettingRowView: View {
+public struct ColorfulSettingRowView: View {
     var label: String
-    var symbol: String
+    var symbol: SFSymbol
     var color: Color
-    var trailingSymbol: String?
-    
+    var trailingSymbol: SFSymbol?
+
     @ScaledMetric var size = 28.0
 
-    var body: some View {
+    public var body: some View {
         HStack {
-            Label(label, systemImage: symbol)
+            Label(label, systemSymbol: symbol)
                 .labelStyle(ColorfulIconLabelStyle(color: color, size: size))
             Spacer(minLength: 0)
             if let trailingSymbol {
-                Image(systemName: trailingSymbol)
+                Image(systemSymbol: trailingSymbol)
                     .foregroundStyle(Color(uiColor: .systemGray2))
             }
         }
@@ -60,7 +61,7 @@ extension Font {
 #Preview {
     ColorfulSettingRowView(
         label: "General",
-        symbol: "tag",
+        symbol: .tag,
         color: .gray
     )
 }

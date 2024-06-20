@@ -12,11 +12,14 @@ let package = Package(
             name: "DevKit",
             targets: ["DevKit"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/SFSafeSymbols/SFSafeSymbols.git", branch: "stable"),
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "DevKit"),
+            name: "DevKit", dependencies: ["SFSafeSymbols"]),
         .testTarget(
             name: "DevKitTests",
             dependencies: ["DevKit"]),
