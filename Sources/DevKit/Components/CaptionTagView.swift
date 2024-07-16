@@ -12,6 +12,14 @@ public struct CaptionTagView: View {
     var textColor: Color = .secondary
     var background: Color = .captionTagBackground
 
+    public init(label: String,
+                textColor: Color = .secondary,
+                background: Color = .captionTagBackground) {
+        self.label = label
+        self.textColor = textColor
+        self.background = background
+    }
+
     public var body: some View {
         Text(label)
             .font(.caption2)

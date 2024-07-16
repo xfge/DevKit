@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension Color {
+public extension Color {
     static var captionTagBackground: Color {
         Color(uiColor: UIColor { $0.userInterfaceStyle == .dark ? .systemGray5 : .systemGray6 })
     }
