@@ -31,8 +31,8 @@ public struct SectionHeader<MoreView: View>: View {
     }
 }
 
-extension SectionHeader<EmptyView> {
-    init(title: String) {
+public extension SectionHeader<EmptyView> {
+    public init(title: String) {
         self.title = title
         more = { EmptyView() }
     }
