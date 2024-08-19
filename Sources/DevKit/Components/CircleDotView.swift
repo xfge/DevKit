@@ -8,7 +8,9 @@
 import SwiftUI
 
 public struct CircleDotView: View {
-    @ScaledMetric var iconSize = 7.0
+    @ScaledMetric var iconSize: Double = 7.0
+
+    public init() {}
 
     public var body: some View {
         Image(systemSymbol: .circleFill)
