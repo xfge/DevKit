@@ -10,7 +10,16 @@ import SwiftUI
 public struct SentenceWithLinkView: View {
     var sentence: String
     var linkWord: String
-    var url: URL? = URL(string: UIApplication.openSettingsURLString)
+    var url: URL?
+
+    public init(
+        sentence: String,
+        linkWord: String,
+        url: URL? = URL(string: UIApplication.openSettingsURLString)) {
+        self.sentence = sentence
+        self.linkWord = linkWord
+        self.url = url
+    }
 
     public var body: some View {
         Text(attributedString)
