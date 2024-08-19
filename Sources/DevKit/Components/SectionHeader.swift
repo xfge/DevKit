@@ -12,6 +12,16 @@ public struct SectionHeader<MoreView: View>: View {
     var caption: String?
     var vPadding: CGFloat = 8
     @ViewBuilder var more: () -> MoreView
+    
+    public init(title: String, 
+                caption: String? = nil,
+                vPadding: CGFloat = 8,
+                @ViewBuilder more: @escaping () -> MoreView) {
+        self.title = title
+        self.caption = caption
+        self.vPadding = vPadding
+        self.more = more
+    }
 
     public var body: some View {
         HStack {
