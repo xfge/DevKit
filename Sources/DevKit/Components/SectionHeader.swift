@@ -9,10 +9,12 @@ import SwiftUI
 
 public struct SectionHeader<MoreView: View>: View {
     var title: String
+    var font: Font = .title3
     var vPadding: CGFloat = 8
     @ViewBuilder var more: () -> MoreView
-    
-    public init(title: String, 
+
+    public init(title: String,
+                font: Font = .title3,
                 vPadding: CGFloat = 8,
                 @ViewBuilder more: @escaping () -> MoreView) {
         self.title = title
@@ -25,7 +27,7 @@ public struct SectionHeader<MoreView: View>: View {
             Text(title)
                 .bold()
                 .foregroundColor(.primary)
-                .font(.title3)
+                .font(font)
             Spacer()
             more()
         }
