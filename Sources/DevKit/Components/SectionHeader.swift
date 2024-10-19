@@ -38,8 +38,10 @@ public struct SectionHeader<MoreView: View>: View {
 }
 
 public extension SectionHeader<EmptyView> {
-    init(title: String) {
+    init(title: String, font: Font = .title3, vPadding: CGFloat = 8) {
         self.title = title
+        self.font = font
+        self.vPadding = vPadding
         more = { EmptyView() }
     }
 }
