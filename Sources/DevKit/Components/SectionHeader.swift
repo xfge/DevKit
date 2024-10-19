@@ -25,9 +25,8 @@ public struct SectionHeader<MoreView: View>: View {
     public var body: some View {
         HStack {
             Text(title)
-                .bold()
                 .foregroundColor(.primary)
-                .font(font)
+                .font(font.bold())
             Spacer()
             more()
         }
