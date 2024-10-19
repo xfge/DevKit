@@ -9,8 +9,8 @@ import SwiftUI
 
 public struct SectionHeader<MoreView: View>: View {
     var title: String
-    var font: Font = .title3
-    var vPadding: CGFloat = 8
+    var font: Font
+    var vPadding: CGFloat
     @ViewBuilder var more: () -> MoreView
 
     public init(title: String,
@@ -18,6 +18,7 @@ public struct SectionHeader<MoreView: View>: View {
                 vPadding: CGFloat = 8,
                 @ViewBuilder more: @escaping () -> MoreView) {
         self.title = title
+        self.font = font
         self.vPadding = vPadding
         self.more = more
     }
