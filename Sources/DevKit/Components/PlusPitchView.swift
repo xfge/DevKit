@@ -49,7 +49,7 @@ public struct PlusPitchView: View {
         }
         .padding(.horizontal, 24)
         .background {
-            PremiumBackground()
+            PlusBackground()
         }
         .cornerRadius(15)
         .overlay(alignment: .topTrailing) {
