@@ -60,7 +60,7 @@ public struct PlusPitchView: View {
     }
 
     var titleText: some View {
-        Text("Rond PLUS")
+        Text(plusText)
             .font(.system(.title3, weight: .semibold))
             .foregroundColor(.primary)
     }
