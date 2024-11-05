@@ -7,8 +7,10 @@
 
 import SwiftUI
 
-public struct PremiumBackground: View {
+public struct PlusBackground: View {
     let colors = [Color.mint, .purple, .orange]
+    
+    public init() {}
 
     public var body: some View {
         ZStack {
