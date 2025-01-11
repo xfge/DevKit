@@ -12,14 +12,20 @@ public struct ColorfulSettingRowView: View {
     var label: String
     var symbol: SFSymbol
     var color: Color
+    var showUpdateDot: Bool
     var trailingSymbol: SFSymbol?
 
     @ScaledMetric var size = 28.0
     
-    public init(label: String, symbol: SFSymbol, color: Color, trailingSymbol: SFSymbol? = nil) {
+    public init(label: String,
+                symbol: SFSymbol,
+                color: Color,
+                showUpdateDot: Bool = false,
+                trailingSymbol: SFSymbol? = nil) {
         self.label = label
         self.symbol = symbol
         self.color = color
+        self.showUpdateDot = showUpdateDot
         self.trailingSymbol = trailingSymbol
     }
 
@@ -27,11 +33,16 @@ public struct ColorfulSettingRowView: View {
         HStack {
             Label(label, systemSymbol: symbol)
                 .labelStyle(ColorfulIconLabelStyle(color: color, size: size))
+            if showUpdateDot {
+                CircleDotView()
+                    .foregroundColor(.accentColor)
+            }
             Spacer(minLength: 0)
             if let trailingSymbol {
                 Image(systemSymbol: trailingSymbol)
                     .foregroundStyle(Color(uiColor: .systemGray2))
             }
+           
         }
         .contentShape(Rectangle())
     }
@@ -69,6 +80,7 @@ extension Font {
     ColorfulSettingRowView(
         label: "General",
         symbol: .tag,
-        color: .gray
+        color: .gray,
+        showUpdateDot: true
     )
 }
