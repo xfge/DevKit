@@ -287,11 +287,11 @@ public extension Date {
         (secondsOfDay + offset).truncatingRemainder(dividingBy: 86400)
     }
 
-    func shortTime(in timeZone: TimeZone) -> String {
+    func localized(in timeZone: TimeZone, dateStyle: DateFormatter.Style = .short, timeStyle: DateFormatter.Style = .short) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = timeZone
-        dateFormatter.dateStyle = .none
-        dateFormatter.timeStyle = .short
+        dateFormatter.dateStyle = dateStyle
+        dateFormatter.timeStyle = timeStyle
         return dateFormatter.string(from: self)
     }
 }
