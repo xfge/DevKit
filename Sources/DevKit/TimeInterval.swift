@@ -26,6 +26,10 @@ public extension TimeInterval {
         DateComponentsFormatter.hourMinuteOneUnitEnglish.string(from: roundedToNearestThirtySeconds) ?? ""
     }
 
+    var twoUnitsEnglish: String {
+        DateComponentsFormatter.dayHourMinTwoUnitsEnglish.string(from: roundedToNearestThirtySeconds)!
+    }
+
     // 1d 18h or 19h 31m
     var twoUnitsAbbr: String {
         DateComponentsFormatter.dayHourMinTwoUnitsAbbr.string(from: roundedToNearestThirtySeconds)!

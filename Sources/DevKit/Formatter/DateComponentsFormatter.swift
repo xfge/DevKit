@@ -42,6 +42,15 @@ public extension DateComponentsFormatter {
         formatter.maximumUnitCount = 1
         return formatter
     }()
+    
+    static var dayHourMinTwoUnitsEnglish: DateComponentsFormatter = {
+        let formatter = DateComponentsFormatter()
+        formatter.calendar?.locale = Locale(identifier: "en_US")
+        formatter.allowedUnits = [.day, .hour, .minute]
+        formatter.unitsStyle = .abbreviated
+        formatter.maximumUnitCount = 2
+        return formatter
+    }()
 
     static var dayHourMinTwoUnitsAbbr: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
