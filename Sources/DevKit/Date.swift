@@ -144,13 +144,13 @@ public extension Date {
     }
     
     // Same day: 12:00, Different day: 12:00 (+1)
-    func shortTime(relativeTo targetDate: Date) -> String {
+    func shortTime(relativeTo targetDate: Date) -> (String, Int?) {
         if isInSameDay(as: targetDate) {
-            return shortTime
+            return (shortTime, nil)
         } else if let offset = Calendar.current.dateComponents([.day], from: targetDate.startOfDay, to: startOfDay).day, offset != 0 {
-            return "\(shortTime) (\(offset))"
+            return (shortTime, offset)
         } else {
-            return shortTime
+            return (shortTime, nil)
         }
     }
 
