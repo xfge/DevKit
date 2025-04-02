@@ -142,6 +142,17 @@ public extension Date {
     func compactDateTime(relativeTo date: Date) -> String {
         isInSameDay(as: date) ? shortTime : compactDateTime
     }
+    
+    // Same day: 12:00, Different day: 12:00 (+1)
+    func shortTime(relativeTo targetDate: Date) -> String {
+        if isInSameDay(as: targetDate) {
+            return shortTime
+        } else if let offset = Calendar.current.dateComponents([.day], from: startOfDay, to: targetDate.startOfDay).day, offset != 0 {
+            return "\(shortTime) (\(offset))"
+        } else {
+            return shortTime
+        }
+    }
 
     // The weekday units are the numbers 1 through N (where for the Gregorian calendar N=7 and 1 is Sunday). It also respects the user settings.
     var dayOfWeek: Int {
