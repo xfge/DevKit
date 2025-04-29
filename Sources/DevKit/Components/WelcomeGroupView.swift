@@ -16,7 +16,7 @@ public struct WelcomeDetailView<Header: View, Content: View, Bottom: View>: View
     @ViewBuilder var content: () -> Content
     @ViewBuilder var bottom: () -> Bottom
 
-    public init(title: String? = nil, caption: String? = nil, prompt: String? = nil, header: @escaping () -> Header, content: @escaping () -> Content, bottom: @escaping () -> Bottom, gap: CGFloat) {
+    public init(title: String? = nil, caption: String? = nil, prompt: String? = nil, header: @escaping () -> Header, content: @escaping () -> Content, bottom: @escaping () -> Bottom) {
         self.title = title
         self.caption = caption
         self.prompt = prompt
