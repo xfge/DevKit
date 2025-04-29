@@ -39,7 +39,11 @@ public struct WelcomeDetailView<Header: View, Content: View, Bottom: View>: View
             }
             .padding(.bottom)
 
-            bottom()
+            VStack {
+                bottom()
+                Spacer()
+            }
+            .frame(height: 108)
         }
         .padding()
         .if(UIDevice.isIPad) { view in
