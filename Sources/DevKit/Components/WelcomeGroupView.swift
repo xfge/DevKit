@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  WelcomeGroupView.swift
 //  DevKit
 //
 //  Created by Xiaofei Ge on 2025/4/29.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct WelcomeDetailView<Header: View, Content: View, Bottom: View>: View {
+public struct WelcomeGroupView<Header: View, Content: View, Bottom: View>: View {
     var title: String?
     var caption: String?
     var prompt: String?
@@ -16,7 +16,12 @@ public struct WelcomeDetailView<Header: View, Content: View, Bottom: View>: View
     @ViewBuilder var content: () -> Content
     @ViewBuilder var bottom: () -> Bottom
 
-    public init(title: String? = nil, caption: String? = nil, prompt: String? = nil, header: @escaping () -> Header, content: @escaping () -> Content, bottom: @escaping () -> Bottom) {
+    public init(title: String? = nil,
+                caption: String? = nil,
+                prompt: String? = nil,
+                header: @escaping () -> Header,
+                @ViewBuilder content: @escaping () -> Content,
+                @ViewBuilder bottom: @escaping () -> Bottom) {
         self.title = title
         self.caption = caption
         self.prompt = prompt
