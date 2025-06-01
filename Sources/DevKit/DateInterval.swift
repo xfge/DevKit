@@ -34,6 +34,13 @@ public extension DateInterval {
         formatter.dateTemplate = DateFormatter.is24HourFormat ? "MMMdHm" : "MMMdhm"
         return formatter.string(from: start, to: end)
     }
+    
+    func fullDateTime(timezone: TimeZone) -> String {
+        let formatter = DateIntervalFormatter()
+        formatter.timeZone = timezone
+        formatter.dateTemplate = DateFormatter.is24HourFormat ? "yMMMdHm" : "yMMMdhm"
+        return formatter.string(from: start, to: end)
+    }
 
     // 11:20 - 17:30
     var shortTime: String {
