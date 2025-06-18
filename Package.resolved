@@ -1,13 +1,13 @@
 {
-  "originHash" : "c32226c3b3bf7a1eb2b064ced9a0c4445a8d8947965a3926f0c8360f0d94bf5e",
+  "originHash" : "f0b2fb7ce31ca7a7dd859dac2ebe309091a02ef04da9b4ec57364118a303dfc6",
   "pins" : [
     {
       "identity" : "sfsafesymbols",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SFSafeSymbols/SFSafeSymbols.git",
       "state" : {
-        "revision" : "e2e28f4e56e1769c2ec3c61c9355fc64eb7a535a",
-        "version" : "5.3.0"
+        "revision" : "3dd282d3269b061853a3b3bcd23a509d2aa166ce",
+        "version" : "6.2.0"
       }
     }
   ],
