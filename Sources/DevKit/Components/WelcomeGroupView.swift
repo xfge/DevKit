@@ -74,7 +74,7 @@ public struct WelcomeGroupView<Header: View, Content: View, Bottom: View>: View 
     @ViewBuilder
     var promptBox: some View {
         if let prompt {
-            HStack {
+            HStack(alignment: .top) {
                 Image(systemSymbol: .infoCircle)
                 Text(prompt)
                     .font(.footnote)
