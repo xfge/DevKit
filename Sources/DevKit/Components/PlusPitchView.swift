@@ -9,17 +9,19 @@ import SwiftUI
 
 public struct PlusPitchView: View {
     var isUnlocked: Bool
-    
+    var showGift: Bool
+
     var plusText: String
     var unlockText: String
     var unlockedText: String
     var imageBundleName: String?
-    
+
     var promoText: String?
     var promoColor: Color?
-    
-    public init(isUnlocked: Bool, plusText: String, unlockText: String, unlockedText: String, imageBundleName: String? = nil, promoText: String? = nil, promoColor: Color? = nil) {
+
+    public init(isUnlocked: Bool, showGift: Bool, plusText: String, unlockText: String, unlockedText: String, imageBundleName: String? = nil, promoText: String? = nil, promoColor: Color? = nil) {
         self.isUnlocked = isUnlocked
+        self.showGift = showGift
         self.plusText = plusText
         self.unlockText = unlockText
         self.unlockedText = unlockedText
@@ -35,8 +37,13 @@ public struct PlusPitchView: View {
                 if isUnlocked {
                     statusText
                 } else {
-                    upgradeButton
-                        .padding(.top, 6)
+                    HStack(spacing: 12) {
+                        upgradeButton
+                        if showGift {
+                            GiftIcon()
+                        }
+                    }
+                    .padding(.top, 6)
                 }
             }
             .padding(.vertical, 24)
@@ -87,4 +94,8 @@ public struct PlusPitchView: View {
             .font(.callout)
             .foregroundColor(.secondary)
     }
+}
+
+#Preview {
+    PlusPitchView(isUnlocked: false, showGift: true, plusText: "Rond PLUS", unlockText: "Unlock", unlockedText: "Unlocked")
 }
