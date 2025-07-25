@@ -37,7 +37,7 @@ public struct PlusPitchView: View {
                 if isUnlocked {
                     statusText
                 } else {
-                    HStack(spacing: 12) {
+                    HStack(spacing: 8) {
                         upgradeButton
                         if showGift {
                             GiftIcon()

@@ -12,7 +12,7 @@ public struct GiftIcon: View {
 
     public var body: some View {
         Text("🎁")
-            .scaleEffect(isBreathing ? 1.05 : 0.95)
+            .scaleEffect(isBreathing ? 1.1 : 0.8)
             .animation(
                 .easeInOut(duration: 1.5)
                     .repeatForever(autoreverses: true),
