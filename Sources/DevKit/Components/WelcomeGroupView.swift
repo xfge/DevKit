@@ -11,6 +11,7 @@ public struct WelcomeGroupView<Header: View, Content: View, Bottom: View>: View 
     var title: String?
     var caption: String?
     var prompt: String?
+    var cornerRadius: Double = 8
 
     var header: () -> Header
     @ViewBuilder var content: () -> Content
@@ -19,6 +20,7 @@ public struct WelcomeGroupView<Header: View, Content: View, Bottom: View>: View 
     public init(title: String? = nil,
                 caption: String? = nil,
                 prompt: String? = nil,
+                cornerRadius: Double = 8,
                 header: @escaping () -> Header,
                 @ViewBuilder content: @escaping () -> Content,
                 @ViewBuilder bottom: @escaping () -> Bottom) {
@@ -26,6 +28,7 @@ public struct WelcomeGroupView<Header: View, Content: View, Bottom: View>: View 
         self.caption = caption
         self.prompt = prompt
         self.header = header
+        self.cornerRadius = cornerRadius
         self.content = content
         self.bottom = bottom
     }
@@ -84,8 +87,8 @@ public struct WelcomeGroupView<Header: View, Content: View, Bottom: View>: View 
             .padding(.horizontal)
             .padding(.vertical, 12)
             .background(Color(uiColor: UIColor { $0.userInterfaceStyle == .dark ? .systemGray5 : .systemBackground }))
-            .clipShape(RoundedRectangle(cornerRadius: 8))
-            .contentShape(.contextMenuPreview, RoundedRectangle(cornerRadius: 8))
+            .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+            .contentShape(.contextMenuPreview, RoundedRectangle(cornerRadius: cornerRadius))
             .padding(0.5)
         }
     }
