@@ -15,11 +15,11 @@ public struct ColorfulSettingRowView: View {
     var showUpdateDot: Bool
     var trailingSymbol: SFSymbol?
 
-    @ScaledMetric var size = 28.0
+    @ScaledMetric var size = 30.0
     
     public init(label: String,
                 symbol: SFSymbol,
-                color: Color,
+                color: Color = .gray,
                 showUpdateDot: Bool = false,
                 trailingSymbol: SFSymbol? = nil) {
         self.label = label
@@ -57,21 +57,11 @@ struct ColorfulIconLabelStyle: LabelStyle {
             configuration.title
         } icon: {
             configuration.icon
-                .font(.labelFont)
+                .font(.system(size: size * 0.55))
                 .foregroundColor(.white)
                 .frame(width: size, height: size)
-                .background(color.opacity(0.9))
+                .background(color.opacity(0.8).gradient)
                 .cornerRadius(6)
-        }
-    }
-}
-
-extension Font {
-    static var labelFont: Font {
-        if #available(iOS 17.0, *) {
-            return .footnote
-        } else {
-            return .body
         }
     }
 }
