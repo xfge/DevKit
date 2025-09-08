@@ -60,7 +60,7 @@ struct ColorfulIconLabelStyle: LabelStyle {
                 .font(.system(size: size * 0.55))
                 .foregroundColor(.white)
                 .frame(width: size, height: size)
-                .background(color.opacity(0.8).gradient)
+                .background(color.opacity(0.95).gradient)
                 .cornerRadius(6)
         }
     }
