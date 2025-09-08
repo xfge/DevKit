@@ -15,8 +15,6 @@ public struct ColorfulSettingRowView: View {
     var showUpdateDot: Bool
     var trailingSymbol: SFSymbol?
 
-    @ScaledMetric var size = 30.0
-    
     public init(label: String,
                 symbol: SFSymbol,
                 color: Color = .gray,
@@ -31,8 +29,10 @@ public struct ColorfulSettingRowView: View {
 
     public var body: some View {
         HStack {
-            Label(label, systemSymbol: symbol)
-                .labelStyle(ColorfulIconLabelStyle(color: color, size: size))
+            HStack(spacing: 16) {
+                iconView
+                Text(label)
+            }
             if showUpdateDot {
                 CircleDotView()
                     .foregroundColor(.accentColor)
@@ -42,35 +42,41 @@ public struct ColorfulSettingRowView: View {
                 Image(systemSymbol: trailingSymbol)
                     .foregroundStyle(Color(uiColor: .systemGray2))
             }
-           
         }
-        .contentShape(Rectangle())
+        .contentShape(.rect)
     }
-}
 
-struct ColorfulIconLabelStyle: LabelStyle {
-    var color: Color
-    var size: CGFloat
+    private let iconSize: CGFloat = 16
+    private let boxSize: CGFloat = 30
+    private let corner: CGFloat = 8
 
-    func makeBody(configuration: Configuration) -> some View {
-        Label {
-            configuration.title
-        } icon: {
-            configuration.icon
-                .font(.system(size: size * 0.5))
-                .foregroundColor(.white)
-                .frame(width: size, height: size)
-                .background(color.opacity(0.95).gradient)
-                .cornerRadius(6)
+    private var iconView: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: corner, style: .continuous)
+                .fill(color.gradient)
+                .frame(width: boxSize, height: boxSize)
+            Image(systemSymbol: symbol)
+                .symbolRenderingMode(.monochrome)
+                .font(.system(size: iconSize, weight: .semibold))
+                .foregroundStyle(.white)
         }
+        .accessibilityHidden(true)
     }
 }
 
 #Preview {
-    ColorfulSettingRowView(
-        label: "General",
-        symbol: .tag,
-        color: .gray,
-        showUpdateDot: true
-    )
+    Form {
+        ColorfulSettingRowView(
+            label: "Tags",
+            symbol: .tagFill,
+            color: .blue,
+            showUpdateDot: true
+        )
+        ColorfulSettingRowView(
+            label: "Sleep Data",
+            symbol: .moonZzzFill,
+            color: .gray,
+            showUpdateDot: true
+        )
+    }
 }
