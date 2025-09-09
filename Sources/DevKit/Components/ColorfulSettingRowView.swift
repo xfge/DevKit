@@ -48,7 +48,7 @@ public struct ColorfulSettingRowView: View {
 
     private let iconSize: CGFloat = 16
     private let boxSize: CGFloat = 30
-    private let corner: CGFloat = 8
+    private let corner: CGFloat = 6.7
 
     private var iconView: some View {
         ZStack {
