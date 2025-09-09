@@ -12,15 +12,18 @@ public struct CaptionTagView: View {
     var font: Font
     var textColor: Color
     var background: Color
+    var cornerRadius: CGFloat
 
     public init(label: String,
                 font: Font = .caption2,
                 textColor: Color = .secondary,
-                background: Color = .captionTagBackground) {
+                background: Color = .captionTagBackground,
+                cornerRadius: CGFloat = 5) {
         self.label = label
         self.font = font
         self.textColor = textColor
         self.background = background
+        self.cornerRadius = cornerRadius
     }
 
     public var body: some View {
@@ -30,7 +33,7 @@ public struct CaptionTagView: View {
             .padding(.horizontal, 6)
             .padding(.vertical, 2)
             .background {
-                RoundedRectangle(cornerRadius: 5)
+                RoundedRectangle(cornerRadius: cornerRadius)
                     .foregroundColor(background)
             }
     }
