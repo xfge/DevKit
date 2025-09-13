@@ -44,12 +44,11 @@ public struct ColorfulSettingRowView: View {
             }
         }
         .contentShape(.rect)
-        .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
     }
 
     private let iconSize: CGFloat = 16
-    private let boxSize: CGFloat = 30
-    private let corner: CGFloat = 6.7
+    private let boxSize: CGFloat = 28
+    private let corner: CGFloat = 7
 
     private var iconView: some View {
         ZStack {
