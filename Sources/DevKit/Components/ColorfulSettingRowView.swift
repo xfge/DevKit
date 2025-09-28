@@ -46,7 +46,7 @@ public struct ColorfulSettingRowView: View {
         .contentShape(.rect)
     }
 
-    private let iconSize: CGFloat = 15
+    private let iconSize: CGFloat = 16
     private let boxSize: CGFloat = 28
     private let corner: CGFloat = 7
 
@@ -57,7 +57,7 @@ public struct ColorfulSettingRowView: View {
                 .frame(width: boxSize, height: boxSize)
             Image(systemSymbol: symbol)
                 .symbolRenderingMode(.monochrome)
-                .font(.system(size: iconSize, weight: .semibold))
+                .font(.system(size: iconSize, weight: .regular))
                 .foregroundStyle(.white)
         }
         .accessibilityHidden(true)
