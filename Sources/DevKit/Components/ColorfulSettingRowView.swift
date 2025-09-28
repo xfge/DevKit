@@ -46,7 +46,7 @@ public struct ColorfulSettingRowView: View {
         .contentShape(.rect)
     }
 
-    private let iconSize: CGFloat = 16
+    private let iconSize: CGFloat = 15
     private let boxSize: CGFloat = 28
     private let corner: CGFloat = 7
 
